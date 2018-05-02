@@ -17,15 +17,15 @@ Perf Level: 1
 Initializing RocksDB Options from the specified file
 Initializing RocksDB Options from command-line flags
 DB path: [/mnt/rocksdb]
-fillseq      :       3.133 micros/op 319223 ops/sec;   82.8 MB/s
+fillseq      :       3.315 micros/op 301682 ops/sec;   78.3 MB/s
 Initializing RocksDB Options from the specified file
 Initializing RocksDB Options from command-line flags
 DB path: [/mnt/rocksdb]
-fillrandom   :       4.400 micros/op 227269 ops/sec;   59.0 MB/s
+fillrandom   :       4.368 micros/op 228942 ops/sec;   59.4 MB/s
 DB path: [/mnt/rocksdb]
 readseq      :       3.200 micros/op 312500 ops/sec;   81.1 MB/s
 DB path: [/mnt/rocksdb]
-readrandom   :       4.400 micros/op 227272 ops/sec;   59.0 MB/s (10 of 10 found)
+readrandom   :       4.100 micros/op 243902 ops/sec;   63.3 MB/s (10 of 10 found)
 
 STATISTICS:
 rocksdb.block.cache.miss COUNT : 0
@@ -164,14 +164,14 @@ rocksdb.txn.overhead.mutex.prepare COUNT : 0
 rocksdb.txn.overhead.mutex.old.commit.map COUNT : 0
 rocksdb.txn.overhead.duplicate.key COUNT : 0
 rocksdb.txn.overhead.mutex.snapshot COUNT : 0
-rocksdb.db.get.micros statistics Percentiles :=> 50 : 2.000000 95 : 7.000000 99 : 7.000000 100 : 7.000000
-rocksdb.db.write.micros statistics Percentiles :=> 50 : 2.669599 95 : 5.280087 99 : 7.215230 100 : 9038.000000
+rocksdb.db.get.micros statistics Percentiles :=> 50 : 2.000000 95 : 5.000000 99 : 5.800000 100 : 6.000000
+rocksdb.db.write.micros statistics Percentiles :=> 50 : 2.705734 95 : 5.319000 99 : 7.391010 100 : 11871.000000
 rocksdb.compaction.times.micros statistics Percentiles :=> 50 : 0.000000 95 : 0.000000 99 : 0.000000 100 : 0.000000
 rocksdb.subcompaction.setup.times.micros statistics Percentiles :=> 50 : 0.000000 95 : 0.000000 99 : 0.000000 100 : 0.000000
 rocksdb.table.sync.micros statistics Percentiles :=> 50 : 0.000000 95 : 0.000000 99 : 0.000000 100 : 0.000000
 rocksdb.compaction.outfile.sync.micros statistics Percentiles :=> 50 : 0.000000 95 : 0.000000 99 : 0.000000 100 : 0.000000
 rocksdb.wal.file.sync.micros statistics Percentiles :=> 50 : 0.000000 95 : 0.000000 99 : 0.000000 100 : 0.000000
-rocksdb.manifest.file.sync.micros statistics Percentiles :=> 50 : 8250.000000 95 : 18661.000000 99 : 18661.000000 100 : 18661.000000
+rocksdb.manifest.file.sync.micros statistics Percentiles :=> 50 : 11950.000000 95 : 20091.000000 99 : 20091.000000 100 : 20091.000000
 rocksdb.table.open.io.micros statistics Percentiles :=> 50 : 0.000000 95 : 0.000000 99 : 0.000000 100 : 0.000000
 rocksdb.db.multiget.micros statistics Percentiles :=> 50 : 0.000000 95 : 0.000000 99 : 0.000000 100 : 0.000000
 rocksdb.read.block.compaction.micros statistics Percentiles :=> 50 : 0.000000 95 : 0.000000 99 : 0.000000 100 : 0.000000
