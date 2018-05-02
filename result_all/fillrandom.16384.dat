@@ -1,31 +1,37 @@
-# line thread mrep count
-1 1 skip_list
-2 1 cuckoo 322918
-3 1 prefix_hash 232225
-4 1 hash_linkedlist 220240
-5 1 toss_async 296986
-6 1 toss_sync 121893
-8 2 skip_list 138768
-9 2 cuckoo 227899
-10 2 prefix_hash 185400
-11 2 hash_linkedlist 168273
-12 2 toss_async 226457
-13 2 toss_sync 114090
-15 4 skip_list 236202
-16 4 cuckoo 365869
-17 4 prefix_hash 244944
-18 4 hash_linkedlist 213822
-19 4 toss_async 352871
-20 4 toss_sync 124578
-22 8 skip_list 365250
-23 8 cuckoo 514149
-24 8 prefix_hash 289789
-25 8 hash_linkedlist 234306
-26 8 toss_async 506884
-27 8 toss_sync 154644
-29 16 skip_list 428562
-30 16 cuckoo 517469
-31 16 prefix_hash 265773
-32 16 hash_linkedlist 182502
-33 16 toss_async 507451
-34 16 toss_sync 126662
+# line line2 thread mrep count
+1 1 1 skip_list 292699
+2 1 1 cuckoo 385831
+3 1 1 prefix_hash 318732
+4 1 1 hash_linkedlist 352068
+5 1 1 toss_async 372544
+6 1 1 toss_sync 230962
+8 8 2 skip_list 197797
+9 8 2 cuckoo 255447
+10 8 2 prefix_hash 218820
+11 8 2 hash_linkedlist 231871
+12 8 2 toss_async 255015
+13 8 2 toss_sync 178261
+15 15 4 skip_list 336273
+16 15 4 cuckoo 404126
+17 15 4 prefix_hash 306881
+18 15 4 hash_linkedlist 312211
+19 15 4 toss_async 409557
+20 15 4 toss_sync 246831
+22 22 8 skip_list 490467
+23 22 8 cuckoo 568675
+24 22 8 prefix_hash 384412
+25 22 8 hash_linkedlist 339913
+26 22 8 toss_async 558298
+27 22 8 toss_sync 334905
+29 29 16 skip_list 589550
+30 29 16 cuckoo 627866
+31 29 16 prefix_hash 370545
+32 29 16 hash_linkedlist 246959
+33 29 16 toss_async 614406
+34 29 16 toss_sync 334183
+36 36 32 skip_list 156933
+37 36 32 cuckoo 474156
+38 36 32 prefix_hash 323886
+39 36 32 hash_linkedlist 215702
+40 36 32 toss_async 470466
+41 36 32 toss_sync 311617

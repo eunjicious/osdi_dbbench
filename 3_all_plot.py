@@ -27,7 +27,7 @@ function perf_plot(){
 	for factor in $factors; do
 		fname=$DB_DIR/$factor.16384.dat
 		echo $fname
-		python2.7 ./perf_plot.py $fname 0
+		python2.7 ./perf_plot_line.py $fname 0
 	done
 }
 

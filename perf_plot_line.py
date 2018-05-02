@@ -30,7 +30,6 @@ if len(sys.argv) < 3:
 
 #data_file='test.dat'
 data_file=sys.argv[1]
-print(data_file)
 
 ctype = 'eps' #if len(sys.argv) < 2 else sys.argv[1]
 #ctype = 'pdf'
@@ -45,7 +44,7 @@ global_ymax=ymax
 print(ymax)
 
 #ymax=sys.argv[2]
-c = canvas(ctype, title=data_file, dimensions=['2.5in', '1.85in'])
+c = canvas(ctype, title=data_file, dimensions=['4in', '3.2in'])
 d = drawable(canvas=c, xrange=[0,42], yrange=[-1,global_ymax],
             #coord=[0,25]
             # dimensions=['3in','1.85in']
@@ -56,12 +55,12 @@ d = drawable(canvas=c, xrange=[0,42], yrange=[-1,global_ymax],
 #grid(drawable=d, y=False, xrange=[90,101], xstep=1, linecolor='yellow',
  #    linedash=[2,2])
 
-options = [('skip_list', 'solid', 0.5, 'pink'),
-            ('cuckoo', 'dline1', 0.5, 'black'),
-            ('prefix_hash', 'solid', 0.5, 'green'),
-            ('hash_linkedlist', 'solid', 0.5, 'purple'),
-            ('toss_async', 'solid', 0.5, 'blue'),
-            ('toss_sync', 'solid', 0.5, 'skyblue'),
+options = [('skip_list', 'diamond', 0.8, 'pink', True),
+            ('cuckoo', 'triangle', 1, 'skyblue', True),
+            ('prefix_hash', 'hline', 0.5, 'green', False),
+            ('hash_linkedlist', 'xline', 0.5, 'purple',False),
+            ('toss_async', 'star', 0.5, 'black',False),
+            ('toss_sync', 'vline', 0.5, 'gray',False),
 ]
 
 xm = []
@@ -78,12 +77,13 @@ ym.append((global_ymax,global_ymax*1000))
 axis(drawable=d, style='box',
 #   xauto=[1,15,1],
     title=data_file,
-    ytitle="IOPS(K)",
-	ytitleshift=[20,0],
+    ytitle="IOPS",
+	#ytitleshift=[20,0],
     xtitle="Threads",
     xmanual=xm,
-    #yauto=[0, ymax, ymax/5],
-    ymanual=ym,
+    yauto=[0, ymax, ymax/5],
+	ylabelfontsize=7,
+#    ymanual=ym,
     domajortics=False,
     #xaxisposition=0,
     linewidth=0.5, xlabelfontsize=8.0, doxlabels=True,
@@ -93,18 +93,19 @@ axis(drawable=d, style='box',
 p = plotter()
 L = legend()
 
-for opt, ftype, fsize, color in options:
+for opt, symbstyle, linewidth, color, symbfill in options:
     w = 'mrep="%s"' % opt
     st = table(table=t, where=w)
 
-	#if opt == "prefix_hash" :
-		#opt="hash_skiplist"
-    barargs = {'drawable':d, 'table':st, 'xfield': 'line', 'yfield': 'count',
-                'fill': True, 'barwidth': 0.8, 'fillsize': fsize,
-                'fillstyle': ftype, 'fillcolor': color,
+    lineargs = {'drawable':d, 'table':st, 'xfield': 'line2', 'yfield': 'count',
+				'linecolor':color, 'linewidth':linewidth, 'symbstyle': symbstyle,
+				'symbfill':symbfill,
+				#'linedash':linedash,
                 'legendtext': opt,'legend' : L}
 
-    p.verticalbars(**barargs)
+  #  p.verticalbars(**barargs)
+    p.line(**lineargs)
+	#p.line(**lineargs)
 
     L.draw (c, coord=[d.left() + 5, d.top() -6], style='right', skipnext=4, skipspace=45, fontsize=8, height=5, hspace=2)
 

@@ -1,0 +1,13 @@
+# line group thread mrep count
+1 1 1 skip_list 335115
+2 1 1 cuckoo 383848
+3 1 1 prefix_hash 370484
+4 1 1 hash_linkedlist 352878
+5 1 1 toss_async 364227
+6 1 1 toss_sync 281511
+8 8 2 skip_list 285372
+9 8 2 cuckoo 256778
+10 8 2 prefix_hash 233368
+11 8 2 hash_linkedlist 221574
+12 8 2 toss_async 256742
+13 8 2 toss_sync 210391

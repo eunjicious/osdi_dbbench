@@ -6,7 +6,8 @@ DATA_DIR=./result_all
 #buff=$1
 
 workload=c
-tot_ops=`expr 100 \* 1024 \* 1024`
+#tot_ops=`expr 100 \* 1024 \* 1024`
+tot_ops=`expr 1 \* 1024 \* 1024`
 #mrep="skip_list cuckoo"
 mrep="skip_list cuckoo prefix_hash hash_linkedlist toss_async toss_sync"
 bufflist="16384"
@@ -26,12 +27,13 @@ function get_stat() {
 	for buff in $bufflist; do
 		echo "========= $factor $buff ==========="
 		data_file=$factor.$buff.dat
-		echo "# line thread mrep count" > $data_file
-		#echo "# line thread mrep count" > "memtable.hit.$buff.dat"
+		echo "# line line2 thread mrep count" > $data_file
+		#echo "# line thread mrep count" > $data_file
 		touch tmp
 		th=1
 		line=1
 		while [[ $th -lt 33 ]]; do
+			line2=$line
 			ops=`expr $tot_ops / $th`
 	  		for mr in $mrep; do
 				prefix="$mr"_"$th"_"$workload"_"$ops"_"$buff"
@@ -46,7 +48,8 @@ function get_stat() {
 				#cat $fname | grep -v "Percentile" | grep "rocksdb" | awk -F: '$2!=0 {print $0}'
 				#echo "./1_memtable_run.sh $mr $th $workload $ops $buff"
 	#			./1_memtable_run.sh $mr $th $workload $ops $buff
-				echo $line $th $mr $count >> tmp
+				#echo $line $th $mr $count >> tmp
+				echo $line $line2 $th $mr $count >> tmp
 				line=$((line+1))
 	#			sleep 5
 			done	
