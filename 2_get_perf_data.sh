@@ -9,7 +9,8 @@ workload=c
 #tot_ops=`expr 100 \* 1024 \* 1024`
 tot_ops=`expr 1 \* 1024 \* 1024`
 #mrep="skip_list cuckoo"
-mrep="skip_list cuckoo prefix_hash hash_linkedlist toss_async toss_sync"
+mrep="skip_list cuckoo prefix_hash hash_linkedlist toss_async toss_sync toss_ccuck"
+mrep="skip_list cuckoo toss_async toss_sync toss_ccuck"
 bufflist="16384"
 factors="
 	fillseq
@@ -32,12 +33,14 @@ function get_stat() {
 		touch tmp
 		th=1
 		line=1
-		while [[ $th -lt 33 ]]; do
+		mul=1
+		while [[ $th -lt 31 ]]; do
 			line2=$line
 			ops=`expr $tot_ops / $th`
 	  		for mr in $mrep; do
 				prefix="$mr"_"$th"_"$workload"_"$ops"_"$buff"
 				fname=$prefix.perf
+				echo $fname
 				if [ ! -e $fname ]; then
 					echo "$fname is not found"
 					#th=$((th+th))
@@ -53,7 +56,9 @@ function get_stat() {
 				line=$((line+1))
 	#			sleep 5
 			done	
-			th=$((th+th))
+			th=`expr $mul \* 5`
+			mul=$((mul+1))
+			#th=$((th+th))
 			line=$((line+1))
 	  	done
 		sort -n tmp >> $data_file

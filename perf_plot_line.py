@@ -44,9 +44,9 @@ global_ymax=ymax
 print(ymax)
 
 #ymax=sys.argv[2]
-c = canvas(ctype, title=data_file, dimensions=['4in', '3.2in'])
-d = drawable(canvas=c, xrange=[0,42], yrange=[-1,global_ymax],
-            #coord=[0,25]
+c = canvas(ctype, title=data_file, dimensions=['3.6in', '2.8in'])
+d = drawable(canvas=c, xrange=[0,40], yrange=[-1,global_ymax],
+            coord=[50,40]
             # dimensions=['3in','1.85in']
             )
 
@@ -57,14 +57,16 @@ d = drawable(canvas=c, xrange=[0,42], yrange=[-1,global_ymax],
 
 options = [('skip_list', 'diamond', 0.8, 'pink', True),
             ('cuckoo', 'triangle', 1, 'skyblue', True),
-            ('prefix_hash', 'hline', 0.5, 'green', False),
-            ('hash_linkedlist', 'xline', 0.5, 'purple',False),
+            #('prefix_hash', 'hline', 0.5, 'green', False),
+            #('hash_linkedlist', 'xline', 0.5, 'purple',False),
             ('toss_async', 'star', 0.5, 'black',False),
             ('toss_sync', 'vline', 0.5, 'gray',False),
+            ('toss_ccuck', 'vline', 0.5, 'red',False),
 ]
 
 xm = []
-w='mrep="%s"' % "cuckoo"
+#w='mrep="%s"' % "cuckoo"
+w='mrep="%s"' % "skip_list"
 for x, y in t.query(select='thread,line', where=w):
     y = str(float(y) + 0.5)
     xm.append((x, y))
