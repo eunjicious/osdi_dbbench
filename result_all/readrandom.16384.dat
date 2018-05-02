@@ -1,0 +1,5 @@
+# line line2 thread mrep count
+1 1 1 skip_list 505570
+2 1 1 cuckoo 1651344
+3 1 1 toss_async 1685686
+4 1 1 toss_sync 922937

@@ -1,4 +1,4 @@
-/home/ubuntu/osdi_dbbench_expr/rocksdb_orig/db_bench --key_size=16 --value_size=256 --memtablerep=cuckoo --db=/mnt/rocksdb --benchmarks=fillseq,fillrandom,readseq,readrandom --write_buffer_size=17179869184 --disable_auto_compactions=0 --sync=0 --verify_checksum=0 --threads=25 --use_existing_db=0 --allow_concurrent_memtable_write=0 --num=41943 --keys_per_prefix=10 --prefix_size=8 --enable_pipelined_write=0 --seek_nexts=10 --reads=10 --statistics=1
+/home/ubuntu/osdi_dbbench_expr/rocksdb_orig/db_bench --key_size=16 --value_size=256 --memtablerep=cuckoo --db=/mnt/rocksdb --benchmarks=fillseq,fillrandom,readseq,readrandom --write_buffer_size=17179869184 --disable_auto_compactions=0 --sync=0 --verify_checksum=0 --threads=25 --use_existing_db=0 --allow_concurrent_memtable_write=0 --num=41943 --keys_per_prefix=10 --prefix_size=8 --enable_pipelined_write=0 --seek_nexts=10 --statistics=1
 Initializing RocksDB Options from the specified file
 Initializing RocksDB Options from command-line flags
 Keys:       16 bytes each
@@ -17,15 +17,15 @@ Perf Level: 1
 Initializing RocksDB Options from the specified file
 Initializing RocksDB Options from command-line flags
 DB path: [/mnt/rocksdb]
-fillseq      :       1.678 micros/op 595916 ops/sec;  154.6 MB/s
+fillseq      :       1.674 micros/op 597361 ops/sec;  155.0 MB/s
 Initializing RocksDB Options from the specified file
 Initializing RocksDB Options from command-line flags
 DB path: [/mnt/rocksdb]
-fillrandom   :       1.724 micros/op 580139 ops/sec;  150.5 MB/s
+fillrandom   :       1.682 micros/op 594385 ops/sec;  154.2 MB/s
 DB path: [/mnt/rocksdb]
-readseq      :    1190.796 micros/op 839 ops/sec;    0.2 MB/s
+readseq      :       0.293 micros/op 3413941 ops/sec;  885.6 MB/s
 DB path: [/mnt/rocksdb]
-readrandom   :       0.604 micros/op 1655629 ops/sec;  429.5 MB/s (10 of 10 found)
+readrandom   :       0.065 micros/op 15492213 ops/sec; 4018.7 MB/s (41943 of 41943 found)
 
 STATISTICS:
 rocksdb.block.cache.miss COUNT : 0
@@ -55,7 +55,7 @@ rocksdb.persistent.cache.hit COUNT : 0
 rocksdb.persistent.cache.miss COUNT : 0
 rocksdb.sim.block.cache.hit COUNT : 0
 rocksdb.sim.block.cache.miss COUNT : 0
-rocksdb.memtable.hit COUNT : 250
+rocksdb.memtable.hit COUNT : 1048575
 rocksdb.memtable.miss COUNT : 0
 rocksdb.l0.hit COUNT : 0
 rocksdb.l1.hit COUNT : 0
@@ -68,17 +68,17 @@ rocksdb.compaction.range_del.drop.obsolete COUNT : 0
 rocksdb.compaction.optimized.del.drop.obsolete COUNT : 0
 rocksdb.compaction.cancelled COUNT : 0
 rocksdb.number.keys.written COUNT : 2097150
-rocksdb.number.keys.read COUNT : 250
+rocksdb.number.keys.read COUNT : 1048575
 rocksdb.number.keys.updated COUNT : 0
-rocksdb.bytes.written COUNT : 580741764
-rocksdb.bytes.read COUNT : 64000
+rocksdb.bytes.written COUNT : 580712892
+rocksdb.bytes.read COUNT : 268435200
 rocksdb.number.db.seek COUNT : 25
-rocksdb.number.db.next COUNT : 250
+rocksdb.number.db.next COUNT : 1048575
 rocksdb.number.db.prev COUNT : 0
 rocksdb.number.db.seek.found COUNT : 25
-rocksdb.number.db.next.found COUNT : 250
+rocksdb.number.db.next.found COUNT : 1048550
 rocksdb.number.db.prev.found COUNT : 0
-rocksdb.db.iter.bytes.read COUNT : 74800
+rocksdb.db.iter.bytes.read COUNT : 285212400
 rocksdb.no.file.closes COUNT : 0
 rocksdb.no.file.opens COUNT : 0
 rocksdb.no.file.errors COUNT : 0
@@ -103,9 +103,9 @@ rocksdb.block.cachecompressed.hit COUNT : 0
 rocksdb.block.cachecompressed.add COUNT : 0
 rocksdb.block.cachecompressed.add.failures COUNT : 0
 rocksdb.wal.synced COUNT : 0
-rocksdb.wal.bytes COUNT : 580741764
-rocksdb.write.self COUNT : 160697
-rocksdb.write.other COUNT : 1936453
+rocksdb.wal.bytes COUNT : 580712892
+rocksdb.write.self COUNT : 158291
+rocksdb.write.other COUNT : 1938859
 rocksdb.write.timeout COUNT : 0
 rocksdb.write.wal COUNT : 4194300
 rocksdb.compact.read.bytes COUNT : 0
@@ -164,14 +164,14 @@ rocksdb.txn.overhead.mutex.prepare COUNT : 0
 rocksdb.txn.overhead.mutex.old.commit.map COUNT : 0
 rocksdb.txn.overhead.duplicate.key COUNT : 0
 rocksdb.txn.overhead.mutex.snapshot COUNT : 0
-rocksdb.db.get.micros statistics Percentiles :=> 50 : 0.565611 95 : 3.850000 99 : 8.000000 100 : 10.000000
-rocksdb.db.write.micros statistics Percentiles :=> 50 : 35.830412 95 : 72.928196 99 : 106.297934 100 : 13776.000000
+rocksdb.db.get.micros statistics Percentiles :=> 50 : 0.500682 95 : 0.951296 99 : 0.991350 100 : 23973.000000
+rocksdb.db.write.micros statistics Percentiles :=> 50 : 34.833547 95 : 72.637380 99 : 104.883699 100 : 6300.000000
 rocksdb.compaction.times.micros statistics Percentiles :=> 50 : 0.000000 95 : 0.000000 99 : 0.000000 100 : 0.000000
 rocksdb.subcompaction.setup.times.micros statistics Percentiles :=> 50 : 0.000000 95 : 0.000000 99 : 0.000000 100 : 0.000000
 rocksdb.table.sync.micros statistics Percentiles :=> 50 : 0.000000 95 : 0.000000 99 : 0.000000 100 : 0.000000
 rocksdb.compaction.outfile.sync.micros statistics Percentiles :=> 50 : 0.000000 95 : 0.000000 99 : 0.000000 100 : 0.000000
 rocksdb.wal.file.sync.micros statistics Percentiles :=> 50 : 0.000000 95 : 0.000000 99 : 0.000000 100 : 0.000000
-rocksdb.manifest.file.sync.micros statistics Percentiles :=> 50 : 18000.000000 95 : 23636.000000 99 : 23636.000000 100 : 23636.000000
+rocksdb.manifest.file.sync.micros statistics Percentiles :=> 50 : 18000.000000 95 : 22304.000000 99 : 22304.000000 100 : 22304.000000
 rocksdb.table.open.io.micros statistics Percentiles :=> 50 : 0.000000 95 : 0.000000 99 : 0.000000 100 : 0.000000
 rocksdb.db.multiget.micros statistics Percentiles :=> 50 : 0.000000 95 : 0.000000 99 : 0.000000 100 : 0.000000
 rocksdb.read.block.compaction.micros statistics Percentiles :=> 50 : 0.000000 95 : 0.000000 99 : 0.000000 100 : 0.000000
@@ -188,7 +188,7 @@ rocksdb.db.write.stall statistics Percentiles :=> 50 : 0.000000 95 : 0.000000 99
 rocksdb.sst.read.micros statistics Percentiles :=> 50 : 0.000000 95 : 0.000000 99 : 0.000000 100 : 0.000000
 rocksdb.num.subcompactions.scheduled statistics Percentiles :=> 50 : 0.000000 95 : 0.000000 99 : 0.000000 100 : 0.000000
 rocksdb.bytes.per.read statistics Percentiles :=> 50 : 256.000000 95 : 256.000000 99 : 256.000000 100 : 256.000000
-rocksdb.bytes.per.write statistics Percentiles :=> 50 : 3540.350795 95 : 6912.000000 99 : 6912.000000 100 : 6912.000000
+rocksdb.bytes.per.write statistics Percentiles :=> 50 : 3578.714696 95 : 6912.000000 99 : 6912.000000 100 : 6912.000000
 rocksdb.bytes.per.multiget statistics Percentiles :=> 50 : 0.000000 95 : 0.000000 99 : 0.000000 100 : 0.000000
 rocksdb.bytes.compressed statistics Percentiles :=> 50 : 0.000000 95 : 0.000000 99 : 0.000000 100 : 0.000000
 rocksdb.bytes.decompressed statistics Percentiles :=> 50 : 0.000000 95 : 0.000000 99 : 0.000000 100 : 0.000000
