@@ -1,0 +1,44 @@
+Linux 4.4.0-1055-aws (gdb8) 	05/02/2018 	_x86_64_	(16 CPU)
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           1.40    0.00    0.67    0.02    0.00   97.91
+
+Device:            tps    kB_read/s    kB_wrtn/s    kB_read    kB_wrtn
+nvme0n1          12.45       169.92       224.81     637711     843728
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+          32.44    0.00   24.64    0.25    0.00   42.67
+
+Device:            tps    kB_read/s    kB_wrtn/s    kB_read    kB_wrtn
+nvme0n1         273.00         0.00      1100.00          0       1100
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+          52.15    0.00   45.98    0.00    0.00    1.87
+
+Device:            tps    kB_read/s    kB_wrtn/s    kB_read    kB_wrtn
+nvme0n1         488.00         0.00      1960.00          0       1960
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+          51.11    0.00   47.03    0.00    0.00    1.86
+
+Device:            tps    kB_read/s    kB_wrtn/s    kB_read    kB_wrtn
+nvme0n1         279.00         0.00      1116.00          0       1116
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+          38.08    0.00   34.52    0.19    0.00   27.22
+
+Device:            tps    kB_read/s    kB_wrtn/s    kB_read    kB_wrtn
+nvme0n1         211.00         0.00       848.00          0        848
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+          48.08    0.00   50.35    0.00    0.00    1.57
+
+Device:            tps    kB_read/s    kB_wrtn/s    kB_read    kB_wrtn
+nvme0n1           0.00         0.00         0.00          0          0
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+          48.63    0.00   49.81    0.00    0.00    1.56
+
+Device:            tps    kB_read/s    kB_wrtn/s    kB_read    kB_wrtn
+nvme0n1           0.00         0.00         0.00          0          0
+
