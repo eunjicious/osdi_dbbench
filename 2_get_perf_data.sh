@@ -31,7 +31,7 @@ function get_stat() {
 		touch tmp
 		th=1
 		line=1
-		while [[ $th -lt 17 ]]; do
+		while [[ $th -lt 33 ]]; do
 			ops=`expr $tot_ops / $th`
 	  		for mr in $mrep; do
 				prefix="$mr"_"$th"_"$workload"_"$ops"_"$buff"
@@ -46,7 +46,6 @@ function get_stat() {
 				#cat $fname | grep -v "Percentile" | grep "rocksdb" | awk -F: '$2!=0 {print $0}'
 				#echo "./1_memtable_run.sh $mr $th $workload $ops $buff"
 	#			./1_memtable_run.sh $mr $th $workload $ops $buff
-				echo $line $th $mr $count 
 				echo $line $th $mr $count >> tmp
 				line=$((line+1))
 	#			sleep 5
@@ -57,6 +56,7 @@ function get_stat() {
 		sort -n tmp >> $data_file
 		rm tmp
 		cat $data_file
+		echo $data_file
 #		mv $data_file $DATA_DIR
 	done
 }

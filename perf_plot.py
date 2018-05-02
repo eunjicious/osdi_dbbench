@@ -30,18 +30,23 @@ if len(sys.argv) < 3:
 
 #data_file='test.dat'
 data_file=sys.argv[1]
+print(data_file)
 
 ctype = 'eps' #if len(sys.argv) < 2 else sys.argv[1]
 #ctype = 'pdf'
 
 t = table(file=data_file)
-#t.dump()
-ymax = round(get_ymax(['count'], t),-1)
-global_ymax=int(sys.argv[2])
+t.dump()
+#ymax = round(get_ymax(['count'], t),-1)
+ymax = get_ymax(['count'],t)
+
+#global_ymax=int(sys.argv[2])
+global_ymax=ymax
+print(ymax)
 
 #ymax=sys.argv[2]
 c = canvas(ctype, title=data_file, dimensions=['2.5in', '1.85in'])
-d = drawable(canvas=c, xrange=[0,26], yrange=[-1,global_ymax*1000],
+d = drawable(canvas=c, xrange=[0,42], yrange=[-1,global_ymax],
             #coord=[0,25]
             # dimensions=['3in','1.85in']
             )
@@ -54,7 +59,10 @@ d = drawable(canvas=c, xrange=[0,26], yrange=[-1,global_ymax*1000],
 options = [('skip_list', 'solid', 0.5, 'pink'),
             ('cuckoo', 'dline1', 0.5, 'black'),
             ('prefix_hash', 'solid', 0.5, 'green'),
-            ('hash_linkedlist', 'solid', 0.5, 'purple'),]
+            ('hash_linkedlist', 'solid', 0.5, 'purple'),
+            ('toss_async', 'solid', 0.5, 'blue'),
+            ('toss_sync', 'solid', 0.5, 'skyblue'),
+]
 
 xm = []
 w='mrep="%s"' % "cuckoo"
