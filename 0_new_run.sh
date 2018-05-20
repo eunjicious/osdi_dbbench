@@ -1,6 +1,7 @@
 #!/bin/bash
 DB_DIR=/mnt/rocksdb
 KVS="rocksdb_orig rocksdb_async rocksdb_sync"
+KVS="rocksdb_orig"
 
 ENABLE_PIPELINE=0
 STATISTICS=1
@@ -28,7 +29,8 @@ function run(){
 
   	for mr in $mrep_list; do
 		th=1
-		while [[ $th -lt 33 ]]; do
+		#while [[ $th -lt 33 ]]; do
+		while [[ $th -lt 2 ]]; do
 			ops=`expr $TOT_OPS / $th`
 			echo "run_common $mr $th $ops $buff"
 			fname="$mr"_"$th"_"c"_"$ops"_"$buff"

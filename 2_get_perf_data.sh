@@ -8,6 +8,7 @@ DATA_DIR=./result_all
 workload=c
 #tot_ops=`expr 100 \* 1024 \* 1024`
 tot_ops=`expr 1 \* 1024 \* 1024`
+tot_ops=`expr 1 \* 102400`
 #mrep="skip_list cuckoo"
 mrep="skip_list cuckoo prefix_hash hash_linkedlist toss_async toss_sync toss_ccuck"
 mrep="skip_list cuckoo toss_async toss_sync toss_ccuck"
